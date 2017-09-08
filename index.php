@@ -10,7 +10,7 @@
             }
 
             textarea{
-                height:100;
+                height:100px;
                 resize:vertical;
             }
 
@@ -25,7 +25,7 @@
         <form action="index.php" method="post" enctype="multipart/form-data">
             <input type="text" name="username" placeholder="Name.." required><br>
             <input type="email" name="email" placeholder="email..." required><br>
-            <textarea name="body" cols="20" rows="10" required></textarea><br>
+            <textarea name="body" cols="20" rows="30" placeholder="Message..." required></textarea><br>
             <input type="file" name="attachment" placeholder="Name.." required><br>
             <input type="submit" name="submit" value="send"><br>
        
