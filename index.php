@@ -1,4 +1,29 @@
-<!DOCTYPE html> 
+<?php
+if(isset($_POST['submit'])){
+    require 'phpmailer/PHPMailerAutoload.php';
+
+        echo "hello";
+        function sendEmail($to, $from, $fromName, $body, $attchment){
+        $mail = new PHPMailer();
+        $mail->setFrom($from, $fromName);
+        $mail->addAddress($to);
+        $mail-> addAttachment($attchment);
+        $mail-> addSubject = 'Contact Form - Email';
+        $mail-> Body = $body;
+        $mail-> isHTML(false);
+
+        return  $mail->send();
+    }
+
+    $name = $_POST['username'];
+    $email = $_POST['email'];
+    $body = $_POST['body'];
+
+    $file = "attachment/".basename($_FILES['attachment']['name']);
+    echo "<pre>";
+    print_r($_FILES);
+}
+?>
 <html> 
     <head>
         <title>test form</title>
